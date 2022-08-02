@@ -9,7 +9,7 @@ import discord
 from discord.ext import commands, tasks
 from discord import CategoryChannel
 from dotenv import load_dotenv
-from include.elo_system import *
+# from include.elo_system import * # not going to use right now
 
 # get hidden discord token
 load_dotenv()
