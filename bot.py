@@ -333,7 +333,7 @@ with sql.connect('svmranks.db') as sqlCon:
                 #         print("Player is registered: ", bot.get_user(int(player.discordID)))
 
 
-                if (len(players) < 4):
+                if (len(players) != 4):
                     await ctx.send(f"```There must be 2 players in each voice channel (Spies/Mercs)```")
                     return
                 
