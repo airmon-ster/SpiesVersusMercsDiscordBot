@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN') # set up a .env file and put DISCORD_TOKEN = xxxx
 
-SERVER_ID = 873576006307418172 # instinct test server. change
+SERVER_ID = os.getenv('SERVER_ID') # instinct test server. change
 
 # save/commit db changes if ctrl_C is pressed
 def signal_handler(sig, frame):
@@ -110,7 +110,7 @@ async def is_valid_uuid(val):
 
 async def scorecard(players, gameMode, winner):
     try:
-        elo = EloSystem(base_elo = 1200, k = 32)
+        # elo = EloSystem(base_elo = 1200, k = 32)
         if winner == "SPIES":
             for x in players:
                 if type(x) is Spy:
