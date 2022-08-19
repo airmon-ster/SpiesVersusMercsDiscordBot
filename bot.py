@@ -563,7 +563,7 @@ with sql.connect('svmranks.db') as sqlCon:
                 if re.match('^[0-9]', player): # input validate user input
                     data = sqlCon.execute("select * from users where discordID = ?;", (player,))
                     for d in data:
-                        await ctx.send(f"```Player: {await idToName(d[0])} Spy-Ext: {d[1]} Spy-Neu: {d[2]} Spy-Sab: {d[3]} Merc-Ext: {d[4]} Merc-Neu: {d[5]} Merc-Ext: {d[6]} TotalPoints: {d[7]} Wins: {d[8]} Losses: {d[9]}```")
+                        await ctx.send(f"```Player: {await idToName(d[0])} Spy-Ext: {d[1]} Spy-Neu: {d[2]} Spy-Sab: {d[3]} Merc-Ext: {d[4]} Merc-Neu: {d[5]} Merc-Sab: {d[6]} TotalPoints: {d[7]} Wins: {d[8]} Losses: {d[9]}```")
                     # else:
                     #     await ctx.send(f"```I didn't find {offendingPlayer} in the database. Tell them to register or check your spelling!```")
                 else:
@@ -579,7 +579,7 @@ with sql.connect('svmranks.db') as sqlCon:
                 results = []
                 data = sqlCon.execute("select * from users order by totalPoints desc limit 10;")
                 for d in data:
-                    results.append(f"Player: {await idToName(d[0])} Spy-Ext: {d[1]} Spy-Neu: {d[2]} Spy-Sab: {d[3]} Merc-Ext: {d[4]} Merc-Neu: {d[5]} Merc-Ext: {d[6]} TotalPoints: {d[7]} Wins: {d[8]} Losses: {d[9]}")
+                    results.append(f"Player: {await idToName(d[0])} Spy-Ext: {d[1]} Spy-Neu: {d[2]} Spy-Sab: {d[3]} Merc-Ext: {d[4]} Merc-Neu: {d[5]} Merc-Sab: {d[6]} TotalPoints: {d[7]} Wins: {d[8]} Losses: {d[9]}")
                 print(results)
                 formattedMembers = "\n".join(results)
                 if formattedMembers:
