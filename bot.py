@@ -392,7 +392,7 @@ with sql.connect('svmranks.db') as sqlCon:
 
 
         # ============== MAP SUGGESTOR ================#
-        @bot.command(name='mapgen', help='!rank mapgen - Shows detailed help information.')
+        @bot.command(name='mapgen', help='!rank mapgen - Generates 3 weighted, random map/mode choices.')
         async def mapgen(ctx):
             try:
                 mapCombos = [
