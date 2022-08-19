@@ -545,10 +545,10 @@ with sql.connect('svmranks.db') as sqlCon:
                     for id in results:
                         result = id
                     if (username in result):
-                        sqlCon.execute("delete from matches where matchID = ?;", (uuidGen,))
+                        sqlCon.execute("delete from matches where matchID = ? and confirmed = 0;", (uuidGen,))
                         await ctx.send(f"```Rejected match id: {uuidGen}```")
                     else:
-                        await ctx.send(f"Provided instance not found or you were not in that match.")
+                        await ctx.send(f"Provided instance not found, you were not in that match, or the match was already confirmed.")
                 else:
                     await ctx.send("```Please enter a valid input```")
             except:
