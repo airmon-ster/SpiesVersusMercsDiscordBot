@@ -342,12 +342,12 @@ with sql.connect('svmranks.db') as sqlCon:
 
                 
                 # custom type checker to ensure there is at least 1 spy and 1 merc
-                typeChecker = SpyMercList(players)
+                #typeChecker = SpyMercList(players)
 
                 # this check intends to see if there were only mercs or only spies in the voice lobby. You need at least 1 spy if there are mercs or at least 1 merc if there are spies. Needs to be tested
-                if ((Spy not in typeChecker) or (Merc not in typeChecker)):
-                    await ctx.send(f"```There was either a spy or merc missing in the player list.```")
-                    return
+               # if ((Spy not in typeChecker) or (Merc not in typeChecker)):
+                    #await ctx.send(f"```There was either a spy or merc missing in the player list.```")
+                    #return
 
                 
                 # at this point everybody should be registered, got their object set up, and ensured there was at least 1 spy and 1 merc
