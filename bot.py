@@ -171,8 +171,11 @@ async def scorecard(players, gameMode, winner):
                     oldName = playerMember.name
                 
                 numberOfGames = x.losses + x.wins
-                removeFinalDigit = str(numberOfGames)[0:int(len(str(numberOfGames))-1)]
-                newName = str(removeFinalDigit) + " - " + oldName
+                if numberOfGames > 9:
+                    removeFinalDigit = str(numberOfGames)[0:int(len(str(numberOfGames))-1)]
+                    newName = str(removeFinalDigit) + " - " + oldName
+                else:
+                    newName = str(0) + " - " + oldName
 
                 await playerMember.edit(nick=newName)
 
@@ -240,8 +243,11 @@ async def scorecard(players, gameMode, winner):
                     oldName = playerMember.name
                 
                 numberOfGames = x.losses + x.wins
-                removeFinalDigit = str(numberOfGames)[0:int(len(str(numberOfGames))-1)]
-                newName = str(removeFinalDigit) + " - " + oldName
+                if numberOfGames > 9:
+                    removeFinalDigit = str(numberOfGames)[0:int(len(str(numberOfGames))-1)]
+                    newName = str(removeFinalDigit) + " - " + oldName
+                else:
+                    newName = str(0) + " - " + oldName
                 await playerMember.edit(nick=newName)
 
 
